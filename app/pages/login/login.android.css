@@ -1,3 +1,9 @@
 StackLayout {
-  height: 340;
+    height: 340;
+}
+
+.submit-button {
+    background-color: #3166cb;
+    color: white;
+    margin-top: 20;
 }

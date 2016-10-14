@@ -1,0 +1,19 @@
+<GridLayout rows="auto,*">
+    <GridLayout row="0" columns="*,auto" className="add-bar">
+        <TextField #groceryField hint="输入一个名称" col="0"
+            [(ngModel)]="grocery"></TextField>
+        <Image src="res://add" col="1"
+            (tap)="addItem()"></Image>
+    </GridLayout>
+
+    <ListView row="1" [items]="groceryList" className="small-spacing">
+        <template let-item="item">
+            <Label [text]="item.name" className="medium-spacing"></Label>
+        </template>
+    </ListView>
+
+    <ActivityIndicator [busy]="isLoading" 
+            [visibility]="isLoading ? 'visible' : 'collapse'" row="1" 
+            horizontalAlignment="center" 
+            verticalAlignment="center"></ActivityIndicator>
+</GridLayout>
